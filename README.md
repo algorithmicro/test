@@ -2,6 +2,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+To run it with docker:
+
+### `sudo docker-compose up -d --build`
+
 In the project directory, you can run:
 
 ### `npm start`
