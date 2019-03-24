@@ -1,11 +1,11 @@
 import React from 'react';
 import HandContainer from './HandContainer';
-import AttackerContainer from './AttackerContainer';
+import QuestionContainer from './QuestionContainer';
 
 const MainContainer = () => (
     <div>
         <HandContainer />
-        <AttackerContainer />
+        <QuestionContainer />
     </div>
 );
 

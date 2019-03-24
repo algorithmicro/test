@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { submitQuestion } from '../actions/index';
-import Attacker from '../components/Attacker/index';
+import Question from '../components/Question/index';
 
 const mapStateToProps = state => ({
     lastQuestion: state.game.currentGame.question,
@@ -11,7 +11,7 @@ const mapDispatchToProps = dispatch => ({
     onClick: question => dispatch(submitQuestion(question)),
 });
 
-class AttackerContainer extends Component {
+class QuestionContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -33,7 +33,7 @@ class AttackerContainer extends Component {
         const { lastQuestion } = this.props;
         const { value } = this.state;
         return (
-            <Attacker
+            <Question
                 handleSubmit={this.handleSubmit}
                 handleChange={this.handleChange}
                 lastQuestion={lastQuestion}
@@ -46,4 +46,4 @@ class AttackerContainer extends Component {
 export default connect(
     mapStateToProps,
     mapDispatchToProps,
-)(AttackerContainer);
+)(QuestionContainer);
