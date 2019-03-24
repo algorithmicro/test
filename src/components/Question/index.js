@@ -9,7 +9,7 @@ const Attacker = ({
     <Wrapper>
         <TextBlock>Enter the question</TextBlock>
         <TextBlock>{`last question was: ${lastQuestion}`}</TextBlock>
-        <TextArea value={value} onChange={handleChange} />
+        <TextArea rows={5} value={value} onChange={handleChange} />
         <Button type="button" onClick={handleSubmit}>
             Submit
         </Button>
