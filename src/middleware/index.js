@@ -1,4 +1,4 @@
-import { INCREMENT_HAND } from '../constants/ActionTypes';
+import { INCREMENT_HAND, HAND_EXCEEDED } from '../constants/ActionTypes';
 
 function checkIfExceededMiddleware({ getState, dispatch }) {
     return function (next) {
@@ -7,7 +7,7 @@ function checkIfExceededMiddleware({ getState, dispatch }) {
             const currentHand = state.handReducer.currentGame.hand;
             if (action.type === INCREMENT_HAND) {
                 if (currentHand > 19) {
-                    return dispatch({ type: 'HAND_EXCEEDED' });
+                    return dispatch({ type: HAND_EXCEEDED });
                 }
             }
             return next(action);
