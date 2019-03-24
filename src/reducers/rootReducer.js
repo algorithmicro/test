@@ -1,7 +1,7 @@
-import initialState from '../data/initialState'
+import initialState from '../data/initialState';
 
-function rootReducer(state = initialState, action) {
-    var clonedState = { ...state };
+function rootReducer(state = initialState) {
+    const clonedState = { ...state };
     return clonedState;
 }
 

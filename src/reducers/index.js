@@ -4,6 +4,5 @@ import rootReducer from './rootReducer';
 
 export default combineReducers({
     handReducer,
-    rootReducer
-})
-
+    rootReducer,
+});
