@@ -14,7 +14,6 @@ const mapDispatchToProps = dispatch => ({
 class AttackerContainer extends Component {
     constructor(props) {
         super(props);
-        // Don't call this.setState() here!
         this.state = {
             value: '',
         };
