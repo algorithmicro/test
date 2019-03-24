@@ -1,10 +1,10 @@
 import React from 'react';
-import Hand from './components/hand';
+import HandContainer from './containers/HandContainer';
 import './App.css';
 
 const App = () => (
     <div className="App">
-        <Hand />
+        <HandContainer />
     </div>
 );
 export default App;
