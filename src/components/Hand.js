@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Hand = ({ currentState, onCLick }) => (
+const Hand = ({ hand, onClick }) => (
     <div>
-        <h1>{currentState.handReducer.currentGame.hand}</h1>
-        <button type="button" onClick={onCLick}>
+        <h1>{hand}</h1>
+        <button type="button" onClick={onClick}>
             Increment
         </button>
     </div>

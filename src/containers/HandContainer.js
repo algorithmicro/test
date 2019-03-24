@@ -2,10 +2,10 @@ import { connect } from 'react-redux';
 import incrementHand from '../actions/index';
 import Hand from '../components/Hand';
 
-const mapStateToProps = state => ({ currentState: state });
+const mapStateToProps = state => ({ hand: state.game.currentGame.hand });
 
 const mapDispatchToProps = dispatch => ({
-    onCLick: () => dispatch(incrementHand()),
+    onClick: () => dispatch(incrementHand()),
 });
 
 const HandContainer = connect(

@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import handReducer from './handReducer';
-import rootReducer from './rootReducer';
+import gameReducer from './gameReducer';
+// import rootReducer from './rootReducer';
 
 export default combineReducers({
-    handReducer,
-    rootReducer,
+    game: gameReducer,
+    // root: rootReducer,
 });

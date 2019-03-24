@@ -1,7 +1,7 @@
 import initialState from '../data/initialState';
 import { INCREMENT_HAND, HAND_EXCEEDED } from '../constants/ActionTypes';
 
-function handReducer(state = initialState, action) {
+function gameReducer(state = initialState, action) {
     const clonedState = { ...state };
     switch (action.type) {
     case INCREMENT_HAND:
@@ -15,4 +15,4 @@ function handReducer(state = initialState, action) {
     }
 }
 
-export default handReducer;
+export default gameReducer;
