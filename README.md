@@ -6,6 +6,10 @@ To run it with docker:
 
 ### `docker-compose up -d --build`
 
+To stop docker:
+
+### `docker-compose down`
+
 In the project directory, you can run:
 
 ### `npm start`
