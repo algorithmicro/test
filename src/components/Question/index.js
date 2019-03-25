@@ -7,8 +7,8 @@ const Attacker = ({
     lastQuestion, handleChange, handleSubmit, value,
 }) => (
     <Wrapper>
+        <TextBlock lastQuestion={lastQuestion}>{`last question was: ${lastQuestion}`}</TextBlock>
         <TextBlock>Enter the question</TextBlock>
-        <TextBlock>{`last question was: ${lastQuestion}`}</TextBlock>
         <TextArea rows={5} value={value} onChange={handleChange} />
         <Button type="button" onClick={handleSubmit}>
             Submit

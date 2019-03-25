@@ -5,7 +5,7 @@ const initialState = {
         question: null,
         response: false,
         userTurn: 'player 1',
-        hand: 0,
+        hand: 1,
     },
 };
 

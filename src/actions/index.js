@@ -1,12 +1,10 @@
-import { INCREMENT_HAND, SUBMIT_QUESTION } from '../constants/ActionTypes';
+import { INCREMENT_HAND, SUBMIT_QUESTION, HAND_EXCEEDED } from '../constants/ActionTypes';
 
-export function incrementHand() {
-    return { type: INCREMENT_HAND };
-}
+export const incrementHand = () => ({ type: INCREMENT_HAND });
 
-export function submitQuestion(payload) {
-    return {
-        type: SUBMIT_QUESTION,
-        payload,
-    };
-}
+export const initializeHand = () => ({ type: HAND_EXCEEDED });
+
+export const submitQuestion = payload => ({
+    type: SUBMIT_QUESTION,
+    payload,
+});

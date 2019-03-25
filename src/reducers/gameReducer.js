@@ -8,7 +8,7 @@ function gameReducer(state = initialState, action) {
         clonedState.currentGame.hand += 1;
         return clonedState;
     case HAND_EXCEEDED:
-        clonedState.currentGame.hand = 0;
+        clonedState.currentGame.hand = 1;
         return clonedState;
     case SUBMIT_QUESTION:
         clonedState.currentGame.question = action.payload;

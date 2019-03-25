@@ -1,11 +1,8 @@
 import React from 'react';
 
-const Hand = ({ hand, onClick }) => (
+const Hand = ({ hand }) => (
     <div>
-        <h1>{hand}</h1>
-        <button type="button" onClick={onClick}>
-            Increment
-        </button>
+        <h3>{`${hand} out of 20`}</h3>
     </div>
 );
 
