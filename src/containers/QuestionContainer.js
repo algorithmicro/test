@@ -4,7 +4,9 @@ import { submitQuestion } from '../actions/index';
 import Question from '../components/Question/index';
 
 const mapStateToProps = state => ({
-    lastQuestion: state.game.currentGame.question,
+    lastQuestion: state.game.currentGame.question.lastQuestion,
+    errorOnQuestion: state.game.currentGame.errorOnQuestion,
+    questionError: state.game.currentGame.questionError,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -30,13 +32,15 @@ class QuestionContainer extends Component {
     };
 
     render() {
-        const { lastQuestion } = this.props;
+        const { lastQuestion, errorOnQuestion, questionError } = this.props;
         const { value } = this.state;
         return (
             <Question
                 handleSubmit={this.handleSubmit}
                 handleChange={this.handleChange}
                 lastQuestion={lastQuestion}
+                errorOnQuestion={errorOnQuestion}
+                questionError={questionError}
                 value={value}
             />
         );

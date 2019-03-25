@@ -1,16 +1,27 @@
 import { INCREMENT_HAND, SUBMIT_QUESTION } from '../constants/ActionTypes';
-import { incrementHand, initializeHand } from '../actions/index';
+import { incrementHand, initializeHand, errorOnQuestion } from '../actions/index';
+import { DUPLICATE_QUESTION, QUESTION_EMPTY } from '../constants/Errors';
 import checkIfExists from '../utils/checkIfExists';
+import isDuplicateQuestion from '../utils/isDuplicateQuestion';
 
-function checkIfExceededMiddleware({ getState, dispatch }) {
+function validationMiddleWare({ getState, dispatch }) {
     return function (next) {
         return function (action) {
             const state = getState();
             const currentHand = state.game.currentGame.hand;
 
             if (action.type === SUBMIT_QUESTION) {
-                if (checkIfExists(action.payload)) {
+                const isDuplicate = isDuplicateQuestion(
+                    action.payload,
+                    state.game.currentGame.question.history,
+                );
+                if (checkIfExists(action.payload) && !isDuplicate) {
                     dispatch(incrementHand());
+                } else {
+                    if (isDuplicate) {
+                        return dispatch(errorOnQuestion(DUPLICATE_QUESTION));
+                    }
+                    return dispatch(errorOnQuestion(QUESTION_EMPTY));
                 }
             }
 
@@ -24,4 +35,4 @@ function checkIfExceededMiddleware({ getState, dispatch }) {
     };
 }
 
-export default checkIfExceededMiddleware;
+export default validationMiddleWare;

@@ -6,6 +6,11 @@ export const Wrapper = styled.div`
     flex-direction:column;
 `;
 
+export const Error = styled.p`
+    display: ${props => (props.errorOnQuestion ? 'block' : 'none')};
+    color: red;
+`;
+
 export const TextArea = styled.textarea`
     margin-bottom:25px;
     resize: none;
