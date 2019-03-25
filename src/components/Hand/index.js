@@ -1,9 +1,10 @@
 import React from 'react';
+import { Wrapper, H } from './styles';
 
 const Hand = ({ hand }) => (
-    <div>
-        <h3>{`${hand} out of 20`}</h3>
-    </div>
+    <Wrapper>
+        <H>{`${hand} out of 20`}</H>
+    </Wrapper>
 );
 
 export default Hand;
