@@ -2,6 +2,11 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
     margin: auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    width: 100%;
     @media(min-width: 320px){
         width: 320px;
     }
@@ -10,9 +15,7 @@ export const Wrapper = styled.div`
     }
     @media (min-width: 1024px) {
         width: 1024px;
-    }
-    @media(max-width: 319px){
-        width: 100%;
+        flex-direction: row;
     }
 `;
 

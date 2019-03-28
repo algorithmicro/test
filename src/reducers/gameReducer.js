@@ -1,6 +1,6 @@
 import initialState from '../data/initialState';
 import {
-    INCREMENT_HAND, HAND_EXCEEDED, SUBMIT_QUESTION, QUESTION_ERROR,
+    INCREMENT_HAND, HAND_EXCEEDED, SUBMIT_QUESTION, QUESTION_ERROR, SUBMIT_WORD_TO_GUESS,
 } from '../constants/ActionTypes';
 
 function gameReducer(state = initialState, action) {
@@ -17,6 +17,9 @@ function gameReducer(state = initialState, action) {
     case SUBMIT_QUESTION:
         clonedState.currentGame.question.lastQuestion = action.payload;
         clonedState.currentGame.question.history.push(action.payload);
+        return clonedState;
+    case SUBMIT_WORD_TO_GUESS:
+        clonedState.currentGame.wordToGuess = action.payload;
         return clonedState;
     case QUESTION_ERROR:
         clonedState.currentGame.errorOnQuestion = true;

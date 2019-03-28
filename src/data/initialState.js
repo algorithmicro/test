@@ -7,7 +7,7 @@ const initialState = {
             history: [],
         },
         response: false,
-        userTurn: 'player 1',
+        userTurn: 'defender',
         hand: 1,
         errorOnQuestion: false,
         questionError: null,

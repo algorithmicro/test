@@ -18,4 +18,5 @@ export const Item = styled.p`
     &:nth-last-child(1) {
         margin-bottom: 0;
     }
+    font-size:11px;
 `;

@@ -1,10 +1,19 @@
 import React from 'react';
-import MainContainer from '../../containers/MainContainer';
 import { Wrapper } from './styles';
+import Screen from '../Screen';
+import HandContainer from '../../containers/HandContainer';
+import QuestionContainer from '../../containers/QuestionContainer';
+import WordToGuessContainer from '../../containers/WordToGuessContainer';
 
 const App = () => (
     <Wrapper>
-        <MainContainer />
+        <Screen active>
+            <HandContainer />
+            <QuestionContainer />
+        </Screen>
+        <Screen active>
+            <WordToGuessContainer />
+        </Screen>
     </Wrapper>
 );
 export default App;
