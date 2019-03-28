@@ -1,8 +1,13 @@
 import { combineReducers } from 'redux';
-import gameReducer from './gameReducer';
-// import rootReducer from './rootReducer';
+import handReducer from './handReducer';
+import questionReducer from './questionReducer';
+import wordToGuessReducer from './wordToGuessReducer';
+import responseReducer from './responseReducer';
+
 
 export default combineReducers({
-    game: gameReducer,
-    // root: rootReducer,
+    hand: handReducer,
+    question: questionReducer,
+    wordToGuess: wordToGuessReducer,
+    response: responseReducer,
 });
