@@ -3,7 +3,6 @@ import { Wrapper } from './styles';
 import Screen from '../Screen';
 import HandContainer from '../../containers/HandContainer';
 import QuestionContainer from '../../containers/QuestionContainer';
-import WordToGuessContainer from '../../containers/WordToGuessContainer';
 
 const App = () => (
     <Wrapper>
@@ -12,7 +11,7 @@ const App = () => (
             <QuestionContainer />
         </Screen>
         <Screen active>
-            <WordToGuessContainer />
+            {/* <WordToGuessContainer /> */}
         </Screen>
     </Wrapper>
 );

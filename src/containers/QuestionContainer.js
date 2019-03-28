@@ -1,53 +1,26 @@
-import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { submitQuestion } from '../actions/index';
-import Question from '../components/Question/index';
+import Question from '../components/Question';
+import {
+    resetQuestion,
+    questionError,
+    guessWord,
+    startSaveQuestion,
+    startGuessWord,
+} from '../actions/questionActions';
 
 const mapStateToProps = state => ({
-    lastQuestion: state.game.currentGame.question.lastQuestion,
-    errorOnQuestion: state.game.currentGame.errorOnQuestion,
-    questionError: state.game.currentGame.questionError,
+    question: state.question,
 });
 
 const mapDispatchToProps = dispatch => ({
-    onClick: question => dispatch(submitQuestion(question)),
+    reset: () => dispatch(resetQuestion()),
+    setError: error => dispatch(questionError(error)),
+    setGuessWord: word => dispatch(guessWord(word)),
+    startQuestion: question => dispatch(startSaveQuestion(question)),
+    startGuess: question => dispatch(startGuessWord(question)),
 });
-
-class QuestionContainer extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: '',
-        };
-    }
-
-    handleChange = (event) => {
-        this.setState({ value: event.target.value });
-    };
-
-    handleSubmit = () => {
-        const { onClick } = this.props;
-        const { value } = this.state;
-        onClick(value);
-    };
-
-    render() {
-        const { lastQuestion, errorOnQuestion, questionError } = this.props;
-        const { value } = this.state;
-        return (
-            <Question
-                handleSubmit={this.handleSubmit}
-                handleChange={this.handleChange}
-                lastQuestion={lastQuestion}
-                errorOnQuestion={errorOnQuestion}
-                questionError={questionError}
-                value={value}
-            />
-        );
-    }
-}
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps,
-)(QuestionContainer);
+)(Question);

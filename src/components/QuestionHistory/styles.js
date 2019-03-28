@@ -9,7 +9,12 @@ export const Wrapper = styled.div`
     border: 1px solid grey;
     border-radius: 5px;
     overflow-y: scroll;
-    margin-top:20px;
+    margin-top:10px;
+`;
+
+export const Text = styled.p`
+    margin-top:30px;
+    font-size:15px;
 `;
 
 export const Item = styled.p`
