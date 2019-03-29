@@ -10,6 +10,7 @@ import {
 
 const mapStateToProps = state => ({
     question: state.question,
+    responseHistory: state.response.history,
 });
 
 const mapDispatchToProps = dispatch => ({

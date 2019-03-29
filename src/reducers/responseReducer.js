@@ -3,7 +3,7 @@ import {
 } from '../constants/ActionTypes';
 
 const initialState = {
-    response: null,
+    history: [],
     error: false,
     errorMessage: null,
 };
@@ -12,23 +12,33 @@ function responseReducer(state = initialState, action) {
     switch (action.type) {
         case RESET_GAME:
             return {
-                response: null,
+                history: [],
                 error: false,
                 errorMessage: null,
             };
         case RESPOND_TRUE:
             return {
                 ...state,
-                response: true,
+                history: [
+                    true,
+                    ...state.history,
+                ],
             };
         case RESPOND_FALSE:
             return {
                 ...state,
-                response: false,
+                history: [
+                    false,
+                    ...state.history,
+                ],
             };
         case RESPOND_INVALID:
             return {
                 ...state,
+                history: [
+                    'Invalid',
+                    ...state.history,
+                ],
                 error: true,
                 errorMessage: action.payload,
             };

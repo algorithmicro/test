@@ -30,7 +30,7 @@ class Response extends PureComponent {
 
         return (
             <div>
-                <Text>{guess}</Text>
+                {(typeof guess !== 'undefined') && <Text>{`Answered: ${guess}`}</Text>}
                 <Wrapper>
                     <Text>
                         <Radio

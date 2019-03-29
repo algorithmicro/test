@@ -4,6 +4,7 @@ export const Wrapper = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 43px;
 `;
 
 export const Radio = styled.input`

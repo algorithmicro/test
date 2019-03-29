@@ -38,12 +38,13 @@ function QuestionsMiddleWare({ getState, dispatch }) {
 
                 if (error) {
                     dispatch(questionError(errorMessage));
+                } else if (state.wordToGuess.word.toLowerCase() !== action.payload.toLowerCase()) {
+                    dispatch(incrementHand());
+                    dispatch(questionError('guessed word was wrong'));
                 } else {
                     dispatch(guessWord(action.payload));
                 }
             }
-
-            // do all your validation here
 
             return next(action);
         };

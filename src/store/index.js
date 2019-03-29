@@ -2,7 +2,6 @@ import { createStore, applyMiddleware } from 'redux';
 import QuestionsMiddleWare from '../middleware/QuestionsMiddleWare';
 import WordToGuessMiddleWare from '../middleware/WordToGuessMiddleWare';
 import ResponseMiddleWare from '../middleware/ResponseMiddleWare';
-import logger from '../middleware/logger';
 import combinedReducers from '../reducers/index';
 
 const store = createStore(
@@ -11,7 +10,6 @@ const store = createStore(
         QuestionsMiddleWare,
         WordToGuessMiddleWare,
         ResponseMiddleWare,
-        logger,
     ),
 );
 

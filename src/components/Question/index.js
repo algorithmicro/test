@@ -20,6 +20,7 @@ class Question extends PureComponent {
         const { startQuestion } = this.props;
         const { value } = this.state;
         startQuestion(value);
+        this.setState({ value: '' });
     };
 
     handleGuessWord = () => {
@@ -34,6 +35,7 @@ class Question extends PureComponent {
             question: {
                 error, errorMessage, history,
             },
+            responseHistory,
         } = this.props;
 
         const { value } = this.state;
@@ -57,7 +59,7 @@ class Question extends PureComponent {
                         Guess Word
                     </Button>
                 </Buttons>
-                <QuestionHistory history={history} />
+                <QuestionHistory history={history} responseHistory={responseHistory} response />
             </Wrapper>
         );
     }

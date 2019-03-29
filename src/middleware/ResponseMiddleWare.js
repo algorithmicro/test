@@ -7,7 +7,7 @@ function ResponseMiddleWare({ dispatch }) {
     return function (next) {
         return function (action) {
             if (action.type === RESPOND_INVALID) {
-                dispatch(questionError('Please ask a valid question'));
+                dispatch(questionError('Please ask a Yes or No question'));
             }
 
             return next(action);
