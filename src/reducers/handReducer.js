@@ -1,4 +1,8 @@
-import { INCREMENT_HAND, INIT_HAND } from '../constants/ActionTypes';
+import {
+    INCREMENT_HAND,
+    INIT_HAND,
+    RESET_GAME,
+} from '../constants/ActionTypes';
 
 function handReducer(state = { turn: 1 }, action) {
     switch (action.type) {
@@ -10,6 +14,8 @@ function handReducer(state = { turn: 1 }, action) {
             return {
                 turn: 1,
             };
+        case RESET_GAME:
+            return { turn: 1 };
         default:
             return state;
     }

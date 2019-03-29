@@ -1,4 +1,6 @@
-import { RESPOND_TRUE, RESPOND_FALSE, RESPOND_INVALID } from '../constants/ActionTypes';
+import {
+    RESPOND_TRUE, RESPOND_FALSE, RESPOND_INVALID, RESET_GAME,
+} from '../constants/ActionTypes';
 
 const initialState = {
     response: null,
@@ -8,6 +10,12 @@ const initialState = {
 
 function responseReducer(state = initialState, action) {
     switch (action.type) {
+        case RESET_GAME:
+            return {
+                response: null,
+                error: false,
+                errorMessage: null,
+            };
         case RESPOND_TRUE:
             return {
                 ...state,

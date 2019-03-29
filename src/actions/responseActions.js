@@ -2,4 +2,4 @@ import { RESPOND_TRUE, RESPOND_FALSE, RESPOND_INVALID } from '../constants/Actio
 
 export const respondTrue = () => ({ type: RESPOND_TRUE });
 export const respondFalse = () => ({ type: RESPOND_FALSE });
-export const invalidReponse = () => ({ type: RESPOND_INVALID });
+export const invalidQuestion = errorMessage => ({ type: RESPOND_INVALID, error: errorMessage });

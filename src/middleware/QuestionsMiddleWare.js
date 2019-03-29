@@ -1,9 +1,11 @@
 import { START_SAVE_QUESTION, START_GUESS_WORD } from '../constants/ActionTypes';
 import { questionError, saveQuestion, guessWord } from '../actions/questionActions';
+import { incrementHand } from '../actions/handActions';
+import { changeTurn } from '../actions/turnActions';
 import checkIfExists from '../utils/checkIfExists';
 import isDuplicateQuestion from '../utils/isDuplicateQuestion';
 
-function validateQuestionsMiddleWare({ getState, dispatch }) {
+function QuestionsMiddleWare({ getState, dispatch }) {
     return function (next) {
         return function (action) {
             const state = getState();
@@ -24,6 +26,8 @@ function validateQuestionsMiddleWare({ getState, dispatch }) {
                     dispatch(questionError(errorMessage));
                 } else {
                     dispatch(saveQuestion(action.payload));
+                    dispatch(changeTurn());
+                    dispatch(incrementHand());
                 }
             }
             if (action.type === START_GUESS_WORD) {
@@ -46,4 +50,4 @@ function validateQuestionsMiddleWare({ getState, dispatch }) {
     };
 }
 
-export default validateQuestionsMiddleWare;
+export default QuestionsMiddleWare;

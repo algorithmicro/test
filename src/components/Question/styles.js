@@ -15,8 +15,11 @@ export const Error = styled.p`
 export const TextArea = styled.textarea`
     margin-bottom: 25px;
     resize: none;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
-        'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    padding: 10px 5px;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+        'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+        'Helvetica Neue', sans-serif;
     border: ${props => (props.isGuessing ? '3px solid green' : '1px solid rgb(169, 169, 169);')};
 `;
 

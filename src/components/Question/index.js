@@ -26,12 +26,13 @@ class Question extends PureComponent {
         const { startGuess } = this.props;
         const { value } = this.state;
         startGuess(value);
+        this.setState({ value: '' });
     }
 
     render() {
         const {
             question: {
-                error, errorMessage, history, isGuessingWord,
+                error, errorMessage, history,
             },
         } = this.props;
 
@@ -47,7 +48,6 @@ class Question extends PureComponent {
                     rows={5}
                     value={value}
                     onChange={this.handleChange}
-                    isGuessing={isGuessingWord}
                 />
                 <Buttons>
                     <Button type="button" onClick={this.handleSubmit}>

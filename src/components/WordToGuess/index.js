@@ -1,7 +1,5 @@
 import React, { PureComponent } from 'react';
-import {
-    Wrapper, Text, Input,
-} from './styles';
+import { Wrapper, Text, Input } from './styles';
 
 import { Button } from '../Question/styles';
 
@@ -21,14 +19,22 @@ class WordToGuess extends PureComponent {
         const { onClick } = this.props;
         const { value } = this.state;
         onClick(value);
+        this.setState({ value: '' });
     };
 
     render() {
-        const { error, wordToGuess } = this.props;
+        const { error, word } = this.props;
         const { value } = this.state;
         return (
             <Wrapper>
-                <Text error={error}>{`word to guess is ${wordToGuess}`}</Text>
+                <Text error={error}>
+                    {/* eslint-disable-next-line no-nested-ternary */}
+                    {error
+                        ? 'Please fill in this field'
+                        : word !== null
+                            ? `Word to guess is ${word}`
+                            : 'Enter a word to guess'}
+                </Text>
                 <Input
                     onChange={this.handleChange}
                     error={error}

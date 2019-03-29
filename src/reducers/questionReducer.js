@@ -4,6 +4,7 @@ import {
     QUESTION_ERROR,
     GUESS_WORD,
     START_SAVE_QUESTION,
+    RESET_GAME,
 } from '../constants/ActionTypes';
 
 const initialState = {
@@ -25,8 +26,12 @@ function questionReducer(state = initialState, action) {
                 history: [action.payload, ...state.history],
             };
         case RESET_QUESTION:
+        case RESET_GAME:
             return {
-                initialState,
+                history: [],
+                error: false,
+                errorMessage: null,
+                guessingWord: null,
             };
         case QUESTION_ERROR:
             return {
